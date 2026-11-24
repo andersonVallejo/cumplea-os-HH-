@@ -1,0 +1,2292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Feliz Cumpleaños</title>
+<meta name="description" content="Tarjeta digital de cumpleaños para Hellen Herrera">
+<meta name="theme-color" content="#D9527A">
+<meta property="og:title" content="Feliz Cumpleaños Hellen Herrera">
+<meta property="og:description" content="Una tarjeta especial con mucho cariño">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28'%3E%F0%9F%92%97%3C/text%3E%3C/svg%3E">
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600;700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  @viewport{
+    width: device-width;
+    zoom: 1.0;
+  }
+  @-ms-viewport{
+    width: device-width;
+  }
+
+  :root{
+    --paper: #FDF1F4;
+    --paper-edge: #F6DCE4;
+    --plum: #8A2846;
+    --plum-soft: #C15E7E;
+    --rose: #F28FA6;
+    --rose-deep: #D9527A;
+    --gold: #F0A8BF;
+    --blush: #FBDDE6;
+    --ink: #6B2440;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  body, .titulo, .mensaje-texto, .nota-texto, .texto-razon, .firma, .eyebrow{
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  img{ max-width: 100%; min-width: 0; display: block; }
+
+  body{
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    background: radial-gradient(circle at 20% 20%, #FFFAFB, var(--paper) 55%);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  /* Contenedor que "sella" los elementos decorativos al tamaño exacto
+     de la pantalla, para que nunca puedan empujar la página hacia
+     los lados (evita cortes/scroll horizontal en celulares) */
+  .capa-decorativa{
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .corazon{
+    position: absolute;
+    bottom: -120px;
+    width: 34px;
+    height: 34px;
+    opacity: 0.6;
+    animation: subir 16s linear infinite;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .corazon::before,
+  .corazon::after{
+    content:"";
+    position:absolute;
+    top:0;
+    width: 18px;
+    height: 28px;
+    border-radius: 18px 18px 0 0;
+    background: #7A0C1C;
+  }
+  .corazon::before{ left: 17px; transform: rotate(-45deg); transform-origin: 0 100%; }
+  .corazon::after{ left: -1px; transform: rotate(45deg); transform-origin: 100% 100%; }
+
+  .corazon.c1{ left: 8%;  animation-delay: -1s; }
+  .corazon.c2{ left: 82%; animation-delay: -6s; width:26px; height:26px; }
+  .corazon.c2::before,
+  .corazon.c2::after{ width:14px; height:22px; border-radius: 14px 14px 0 0; background: #8C0F22; }
+  .corazon.c2::before{ left: 13px; }
+  .corazon.c2::after{ left: -1px; }
+  .corazon.c3{ left: 45%; animation-delay: -11s; width:30px; height:30px; }
+  .corazon.c3::before,
+  .corazon.c3::after{ width:16px; height:25px; border-radius: 16px 16px 0 0; background: #660A18; }
+  .corazon.c3::before{ left: 15px; }
+  .corazon.c3::after{ left: -1px; }
+  .corazon.c4{ left: 25%; animation-delay: -3.5s; width:22px; height:22px; }
+  .corazon.c4::before,
+  .corazon.c4::after{ width:12px; height:19px; border-radius: 12px 12px 0 0; background: #7A0C1C; }
+  .corazon.c4::before{ left: 11px; }
+  .corazon.c4::after{ left: -1px; }
+  .corazon.c5{ left: 63%; animation-delay: -8.5s; width:28px; height:28px; }
+  .corazon.c5::before,
+  .corazon.c5::after{ width:15px; height:24px; border-radius: 15px 15px 0 0; background: #8C0F22; }
+  .corazon.c5::before{ left: 14px; }
+  .corazon.c5::after{ left: -1px; }
+  .corazon.c6{ left: 92%; animation-delay: -13.5s; width:20px; height:20px; }
+  .corazon.c6::before,
+  .corazon.c6::after{ width:11px; height:17px; border-radius: 11px 11px 0 0; background: #660A18; }
+  .corazon.c6::before{ left: 10px; }
+  .corazon.c6::after{ left: -1px; }
+
+  @keyframes subir{
+    0%   { transform: translateY(0) rotate(-3deg); }
+    50%  { transform: translateY(-55vh) rotate(3deg); }
+    100% { transform: translateY(-115vh) rotate(-3deg); }
+  }
+
+  .marco{
+    position: absolute;
+    inset: 18px;
+    border: 1px solid rgba(138,40,70,0.18);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .corazon{ animation: none; display:none; }
+  }
+
+ 
+  .tarjeta{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    background: var(--paper);
+    padding: 40px 20px 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    align-items: start;
+    overflow-x: hidden;
+  }
+  @media (min-width: 760px){
+    .tarjeta{
+      padding: 5vh 6vw 4vh;
+      grid-template-columns: minmax(280px, 34%) minmax(0, 1fr);
+      gap: 5vw;
+    }
+  }
+  .tarjeta > .columna-foto,
+  .tarjeta > .columna-texto{
+    padding-top: 0;
+    min-width: 0;
+  }
+  @media (min-width: 760px){
+    .tarjeta > .columna-foto,
+    .tarjeta > .columna-texto{
+      padding-top: 4vh;
+    }
+  }
+
+  .columna-foto{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .columna-texto{
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  
+  .encabezado{
+    text-align: left;
+    margin-bottom: 18px;
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .titulo{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(34px, 4.2vw, 64px);
+    color: var(--plum);
+    margin: 0;
+    line-height: 1.05;
+  }
+  .titulo .nombre{
+    display:block;
+    font-family: 'Caveat', cursive;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--rose-deep);
+    font-size: clamp(40px, 6vw, 84px);
+    margin-top: 4px;
+  }
+
+  
+  .foto-envoltura{
+    display:flex;
+    justify-content:center;
+    margin: 4px 0 16px;
+    width: 100%;
+    min-width: 0;
+  }
+  .polaroid{
+    background:#fff;
+    padding: 14px 14px 46px;
+    border-radius: 4px;
+    box-shadow: 0 18px 30px -14px rgba(0,0,0,0.35);
+    transform: rotate(-3deg);
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    min-width: 0;
+  }
+  .cinta{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform: translateX(-50%) rotate(-4deg);
+    width: 90px;
+    height: 26px;
+    background: rgba(232,135,156,0.55);
+    border: 1px solid rgba(232,135,156,0.7);
+  }
+  .polaroid img{
+    display:block;
+    width:100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+  .polaroid figcaption{
+    font-family:'Caveat', cursive;
+    font-size: 20px;
+    color: var(--plum-soft);
+    text-align:center;
+    margin-top: 8px;
+  }
+
+  
+  .mensaje{
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 30px;
+    box-shadow: 0 10px 24px -16px rgba(74,35,64,0.3);
+    position: relative;
+    margin-bottom: 26px;
+  }
+  .mensaje::before{
+    content:"“";
+    position:absolute;
+    top: -8px;
+    left: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 74px;
+    color: var(--blush);
+    line-height:1;
+  }
+  .mensaje-texto{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(19px, 1.6vw, 24px);
+    line-height: 1.6;
+    color: var(--ink);
+    position: relative;
+    z-index: 1;
+    margin: 0 0 14px;
+  }
+  .firma{
+    text-align: right;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: var(--rose-deep);
+    margin: 0;
+  }
+
+ 
+  .stickers-titulo{
+    text-align:center;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--plum-soft);
+    font-weight: 600;
+    margin: 0 0 16px;
+  }
+  .stickers{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 16px 14px;
+  }
+  .sticker-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width: 74px;
+  }
+  .sticker{
+    background: var(--blush);
+    border: 2px solid #fff;
+    outline: 1px solid rgba(232,135,156,0.5);
+    border-radius: 50%;
+    width: 66px;
+    height: 66px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 6px 14px -8px rgba(74,35,64,0.5);
+  }
+  .sticker img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .sticker .emoji{
+    position: absolute;
+    inset: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 26px;
+  }
+  .sticker-etiqueta{
+    margin-top: 6px;
+    font-family:'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    color: var(--plum);
+    text-align:center;
+  }
+  .sticker-item:nth-child(odd) .sticker{ transform: rotate(-6deg); }
+  .sticker-item:nth-child(even) .sticker{ transform: rotate(5deg); }
+  .sticker-item:nth-child(3n) .sticker{ transform: rotate(-2deg); outline-color: rgba(204,154,68,0.5); }
+
+  @media (max-width: 680px){
+    .encabezado{ text-align: center; }
+    .sticker{ width: 72px; height: 72px; font-size: 11px; }
+    .sticker span.emoji{ font-size: 24px; }
+    .marco{ inset: 10px; }
+  }
+
+  /* ============================================================
+     MEJORAS AÑADIDAS — globos, música, confeti, animaciones
+     (todo lo anterior se deja intacto, esto solo se agrega)
+     ============================================================ */
+
+  /* --- Entrada suave de la tarjeta --- */
+  .tarjeta{
+    animation: apareceTarjeta 1.1s ease-out both;
+  }
+  @keyframes apareceTarjeta{
+    from{ opacity: 0; transform: translateY(18px) scale(0.985); }
+    to{ opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .columna-foto{ animation: apareceIzq 1s 0.15s ease-out both; }
+  .columna-texto{ animation: apareceDer 1s 0.3s ease-out both; }
+  @keyframes apareceIzq{ from{ opacity:0; transform: translateX(-24px); } to{ opacity:1; transform: translateX(0); } }
+  @keyframes apareceDer{ from{ opacity:0; transform: translateX(24px); } to{ opacity:1; transform: translateX(0); } }
+
+  .sticker-item{ animation: stickerPop 0.6s both; }
+  .sticker-item:nth-child(1){ animation-delay: .55s; }
+  .sticker-item:nth-child(2){ animation-delay: .65s; }
+  .sticker-item:nth-child(3){ animation-delay: .75s; }
+  .sticker-item:nth-child(4){ animation-delay: .85s; }
+  .sticker-item:nth-child(5){ animation-delay: .95s; }
+  .sticker-item:nth-child(6){ animation-delay: 1.05s; }
+  @keyframes stickerPop{
+    from{ opacity: 0; transform: scale(0.5) rotate(0deg); }
+    to{ opacity: 1; transform: scale(1); }
+  }
+  .sticker-item{ transition: transform .25s ease; cursor: default; }
+  .sticker-item:hover{ transform: translateY(-6px) scale(1.08); }
+  .sticker-item:hover .sticker{ box-shadow: 0 12px 20px -8px rgba(74,35,64,0.55); }
+
+  /* --- Pastelito con vela junto al título --- */
+  .pastel-vela{
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+    transform: translateY(-6px);
+  }
+  .pastel-vela svg{ width: 34px; height: 34px; }
+  .llama{
+    animation: parpadeo 1.4s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+  @keyframes parpadeo{
+    0%, 100%{ transform: scale(1) rotate(0deg); opacity: 1; }
+    50%{ transform: scale(1.15) rotate(-3deg); opacity: 0.85; }
+  }
+
+  /* --- Globos flotantes decorativos --- */
+  .globo{
+    position: absolute;
+    bottom: -160px;
+    width: 46px;
+    height: 58px;
+    border-radius: 50% 50% 46% 46%;
+    z-index: 3;
+    opacity: 0.85;
+    pointer-events: none;
+    animation: flotarGlobo 19s linear infinite;
+  }
+  .globo::after{
+    content:"";
+    position:absolute;
+    left: 50%;
+    bottom: -22px;
+    width: 1px;
+    height: 22px;
+    background: rgba(107,36,64,0.35);
+    transform: translateX(-50%);
+  }
+  .globo.g1{ left: 14%; background: var(--rose-deep); animation-delay: -2s; }
+  .globo.g2{ left: 74%; background: var(--gold); animation-delay: -9s; width:38px; height:48px; }
+  .globo.g3{ left: 38%; background: var(--plum-soft); animation-delay: -15s; width:42px; height:54px; }
+  .globo.g4{ left: 90%; background: var(--rose); animation-delay: -5.5s; width:36px; height:46px; }
+
+  @keyframes flotarGlobo{
+    0%   { transform: translateY(0) rotate(-4deg); }
+    50%  { transform: translateY(-62vh) rotate(4deg); }
+    100% { transform: translateY(-125vh) rotate(-4deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .globo{ animation: none; display:none; }
+    .tarjeta, .columna-foto, .columna-texto, .sticker-item{ animation: none; }
+    .llama{ animation: none; }
+  }
+
+  /* --- Botón flotante de música con disco giratorio --- */
+  .reproductor{
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .reproductor .etiqueta-musica{
+    background: #fff;
+    color: var(--plum);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    box-shadow: 0 8px 18px -10px rgba(74,35,64,0.45);
+    opacity: 0;
+    transform: translateX(6px);
+    transition: opacity .25s ease, transform .25s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .reproductor:hover .etiqueta-musica{ opacity: 1; transform: translateX(0); }
+  .boton-musica{
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: radial-gradient(circle at 35% 35%, #3a1220, #17070d 70%);
+    box-shadow: 0 10px 22px -10px rgba(74,35,64,0.6), inset 0 0 0 3px rgba(255,255,255,0.06);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rose);
+    font-size: 20px;
+  }
+  .boton-musica::before{
+    content:"";
+    position:absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 2px dashed rgba(242,143,166,0.35);
+  }
+  .boton-musica.girando{
+    animation: girarDisco 3.2s linear infinite;
+  }
+  @keyframes girarDisco{
+    from{ transform: rotate(0deg); }
+    to{ transform: rotate(360deg); }
+  }
+  .boton-musica:focus-visible{
+    outline: 3px solid var(--rose-deep);
+    outline-offset: 3px;
+  }
+
+  /* --- Botón de sorpresa / confeti --- */
+  .boton-sorpresa{
+    position: fixed;
+    left: 22px;
+    bottom: 22px;
+    z-index: 5;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: var(--plum);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 18px;
+    border-radius: 26px;
+    box-shadow: 0 10px 22px -10px rgba(74,35,64,0.45);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .2s ease;
+  }
+  .boton-sorpresa:hover{ transform: translateY(-3px); }
+  .boton-sorpresa:focus-visible{
+    outline: 3px solid var(--rose-deep);
+    outline-offset: 3px;
+  }
+
+  #lienzo-confeti{
+    position: fixed;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+  }
+
+  @media (max-width: 680px){
+    .reproductor{ right: 14px; bottom: 14px; }
+    .boton-musica{ width: 50px; height: 50px; font-size: 17px; }
+    .boton-sorpresa{ left: 14px; bottom: 14px; padding: 10px 14px; font-size: 12px; }
+    .reproductor .etiqueta-musica{ display: none; }
+  }
+
+  /* ============================================================
+     SEGUNDA TANDA DE MEJORAS — portada de regalo, notas de
+     stickers, carta expandible, firma con más carácter, nota
+     adhesiva decorativa, reubicación de corazones/globos y
+     botón de reinicio. Nada de lo anterior se toca ni se borra.
+     ============================================================ */
+
+  /* --- Portada "abrir tu regalo" --- */
+  html{ scroll-behavior: smooth; }
+
+  body.regalo-cerrado{ overflow: hidden; height: 100vh; }
+
+  .portada{
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 30% 25%, #fff 0%, var(--blush) 45%, var(--rose) 130%);
+    text-align: center;
+    padding: 24px;
+    transition: opacity .7s ease, visibility .7s ease;
+  }
+  .portada.portada-oculta{
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .portada-caja{
+    max-width: 420px;
+  }
+  .portada-regalo{
+    font-size: 64px;
+    display: inline-block;
+    animation: baileRegalo 2.2s ease-in-out infinite;
+    filter: drop-shadow(0 10px 14px rgba(74,35,64,0.25));
+  }
+  @keyframes baileRegalo{
+    0%, 100%{ transform: rotate(-6deg) scale(1); }
+    50%{ transform: rotate(6deg) scale(1.06); }
+  }
+  .portada-eyebrow{
+    display:block;
+    margin-top: 18px;
+    font-size: 12px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    font-weight: 700;
+  }
+  .portada-titulo{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    color: var(--plum);
+    font-size: clamp(36px, 7vw, 58px);
+    margin: 10px 0 6px;
+    line-height: 1.05;
+  }
+  .portada-sub{
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    font-size: 14px;
+    margin: 0 0 26px;
+    opacity: 0.85;
+  }
+  .boton-abrir-regalo{
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--rose-deep), var(--plum));
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 15px 32px;
+    border-radius: 30px;
+    box-shadow: 0 14px 26px -12px rgba(74,35,64,0.55);
+    transition: transform .2s ease, box-shadow .2s ease;
+    letter-spacing: 0.03em;
+  }
+  .boton-abrir-regalo:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 18px 30px -12px rgba(74,35,64,0.6);
+  }
+  .boton-abrir-regalo:active{ transform: translateY(0) scale(0.98); }
+  .boton-abrir-regalo:focus-visible{
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+  .portada-nota-audio{
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--plum-soft);
+    opacity: 0.8;
+  }
+
+  @media (max-width: 680px){
+    .portada-regalo{ font-size: 52px; }
+  }
+
+  /* --- Insignia del pastelito, más protagonista --- */
+  .pastel-vela{
+    position: relative;
+  }
+  .pastel-vela::before{
+    content:"";
+    position: absolute;
+    inset: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,168,191,0.55), transparent 70%);
+    z-index: -1;
+  }
+
+  /* --- Stickers interactivos: notitas al tocar --- */
+  .sticker-item{ cursor: pointer; }
+  .sticker-item:focus-visible .sticker{
+    outline: 3px solid var(--rose-deep);
+    outline-offset: 2px;
+  }
+  .sticker-item::after{
+    content: "toca ✨";
+    position: absolute;
+    margin-top: 70px;
+    font-size: 9px;
+    color: var(--plum-soft);
+    opacity: 0;
+    transition: opacity .2s ease;
+    pointer-events: none;
+  }
+  .sticker-item:hover::after{ opacity: 0.85; }
+
+  .capa-nota-sticker{
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(107,36,64,0.35);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s ease, visibility .25s ease;
+  }
+  .capa-nota-sticker.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+  .caja-nota-sticker{
+    background: #fff;
+    border-radius: 16px;
+    max-width: 320px;
+    width: 100%;
+    padding: 26px 24px 22px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 24px 50px -18px rgba(74,35,64,0.5);
+    transform: scale(0.9) translateY(10px);
+    transition: transform .25s ease;
+  }
+  .capa-nota-sticker.visible .caja-nota-sticker{
+    transform: scale(1) translateY(0);
+  }
+  .caja-nota-sticker .emoji-grande{
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .caja-nota-sticker .nota-titulo{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--rose-deep);
+    margin: 0 0 8px;
+  }
+  .caja-nota-sticker .nota-texto{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+  .boton-cerrar-nota{
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: none;
+    background: var(--blush);
+    color: var(--plum);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+  }
+  .boton-cerrar-nota:focus-visible{
+    outline: 2px solid var(--rose-deep);
+  }
+
+  /* --- Botón para expandir la carta completa --- */
+  .boton-expandir{
+    display: block;
+    margin: 4px auto 0;
+    border: none;
+    background: transparent;
+    color: var(--rose-deep);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    padding: 6px 10px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .boton-expandir:hover{ color: var(--plum); }
+  .mensaje.mensaje-expandida{
+    max-height: none;
+  }
+
+  /* --- Firma con más carácter --- */
+  .firma-nombre{
+    font-size: 1.35em;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+  }
+  .firma-nombre::after{
+    content:"";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--rose-deep) 30%, var(--rose-deep) 70%, transparent);
+    border-radius: 2px;
+  }
+
+  /* --- Nota adhesiva decorativa junto a la foto --- */
+  .nota-adhesiva{
+    background: #FFF6D9;
+    border: 1px solid rgba(196,150,40,0.25);
+    box-shadow: 0 10px 18px -12px rgba(74,35,64,0.4);
+    padding: 12px 16px;
+    max-width: 220px;
+    margin: 14px auto 0;
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 17px;
+    color: #6B5218;
+    text-align: center;
+    transform: rotate(3deg);
+    position: relative;
+  }
+  .nota-adhesiva::before{
+    content:"";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 18px;
+    height: 18px;
+    background: rgba(196,150,40,0.35);
+  }
+
+  /* --- Botón de reiniciar animación --- */
+  .boton-reiniciar{
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 5;
+    border: none;
+    cursor: pointer;
+    background: #fff;
+    color: var(--plum);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 10px 16px;
+    border-radius: 22px;
+    box-shadow: 0 10px 22px -10px rgba(74,35,64,0.45);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: transform .2s ease;
+  }
+  .boton-reiniciar:hover{ transform: translateX(-50%) translateY(-3px); }
+  .boton-reiniciar:focus-visible{
+    outline: 3px solid var(--rose-deep);
+    outline-offset: 3px;
+  }
+  .icono-reiniciar{
+    display: inline-block;
+    transition: transform .4s ease;
+  }
+  .boton-reiniciar.animando .icono-reiniciar{
+    transform: rotate(360deg);
+  }
+
+  @media (max-width: 680px){
+    .boton-reiniciar{ bottom: 78px; font-size: 11px; padding: 8px 14px; }
+  }
+
+  /* --- Corazones y globos: se mantienen todos, solo se ajusta
+         su posición horizontal para que floten cerca de los
+         bordes y no crucen por encima de la carta de texto --- */
+  .corazon.c1{ left: 4%; }
+  .corazon.c2{ left: 93%; }
+  .corazon.c3{ left: 6%; }
+  .corazon.c4{ left: 95%; }
+  .corazon.c5{ left: 3%; }
+  .corazon.c6{ left: 96%; }
+
+  .globo.g1{ left: 5%; }
+  .globo.g2{ left: 91%; }
+  .globo.g3{ left: 8%; }
+  .globo.g4{ left: 94%; }
+
+  @media (max-width: 680px){
+    .corazon.c1{ left: 4%; }
+    .corazon.c2{ left: 88%; }
+    .corazon.c3{ left: 10%; }
+    .corazon.c4{ left: 85%; }
+    .corazon.c5{ left: 6%; }
+    .corazon.c6{ left: 90%; }
+    .globo.g1{ left: 6%; }
+    .globo.g2{ left: 84%; }
+    .globo.g3{ left: 12%; }
+    .globo.g4{ left: 88%; }
+  }
+
+  /* ============================================================
+     TERCERA MEJORA — fondo decorativo "gatita tierna" en la
+     portada (moños, orejitas, bigotes, patitas y estrellas,
+     diseño propio inspirado en el estilo kawaii, sin usar
+     ningún personaje registrado). Todo lo anterior sigue igual.
+     ============================================================ */
+
+  .portada-fondo-gatitos{
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .portada-fondo-gatitos svg{
+    position: absolute;
+    opacity: 0.85;
+  }
+  .portada-caja{
+    position: relative;
+    z-index: 1;
+  }
+
+  .figura-gatita{
+    animation: flotarFigura 6s ease-in-out infinite;
+  }
+  @keyframes flotarFigura{
+    0%, 100%{ transform: translateY(0) rotate(var(--giro, 0deg)); }
+    50%{ transform: translateY(-14px) rotate(var(--giro, 0deg)); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .figura-gatita{ animation: none; }
+  }
+
+  /* ============================================================
+     GANCHO PARA TU PROPIA FOTO DE FONDO
+     ------------------------------------------------------------
+     Aquí NO hay ninguna imagen incrustada. Son solo dos "ventanas"
+     listas para que TÚ coloques tus propios archivos de imagen
+     junto a este HTML, con estos nombres exactos:
+
+       - fondo-portada.jpg   → se ve en la pantalla "Abrir mi regalo"
+       - fondo-tarjeta.jpg   → se ve detrás de toda la tarjeta principal
+
+     Si prefieres .png o .webp, solo cambia la extensión en las
+     dos líneas "url(...)" de aquí abajo.
+
+     Mientras esos archivos no existan, no pasa nada: el fondo
+     rosado que ya tenías se sigue viendo exactamente igual.
+
+     El degradado rosa que va ENCIMA de la foto (--velo-portada y
+     --velo-tarjeta) es lo que mantiene el texto legible. Puedes
+     hacerlo más o menos transparente cambiando esos dos valores.
+     ============================================================ */
+  :root{
+    --velo-portada: linear-gradient(180deg, rgba(255,250,251,0.55), rgba(217,82,122,0.55));
+    --velo-tarjeta: linear-gradient(180deg, rgba(253,241,244,0.88), rgba(253,241,244,0.88));
+  }
+
+  .portada::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--velo-portada), url('hellooo.jpg') center/cover no-repeat;
+  }
+
+  .tarjeta::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--velo-tarjeta), url('hellooou,png') center/cover no-repeat;
+  }
+
+  /* ============================================================
+     CUARTA MEJORA — pista de "hay más abajo" en celular.
+     Solo aparece en pantallas angostas (donde la tarjeta se lee
+     haciendo scroll de toda la página) y se oculta sola apenas
+     el usuario empieza a bajar. Nada de lo anterior se modifica.
+     ============================================================ */
+  .pista-scroll{
+    display: none;
+  }
+
+  @media (max-width: 680px){
+    .pista-scroll{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      position: fixed;
+      left: 50%;
+      bottom: 132px;
+      transform: translateX(-50%);
+      z-index: 4;
+      background: rgba(255,255,255,0.9);
+      color: var(--plum);
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      box-shadow: 0 8px 18px -10px rgba(74,35,64,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .5s ease, transform .5s ease;
+      white-space: nowrap;
+    }
+    .pista-scroll.pista-visible{
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .pista-scroll.pista-oculta{
+      opacity: 0;
+      transform: translateX(-50%) translateY(10px);
+    }
+    .flecha-rebote{
+      display: inline-block;
+      animation: rebotarFlecha 1.3s ease-in-out infinite;
+      font-size: 13px;
+    }
+    @keyframes rebotarFlecha{
+      0%, 100%{ transform: translateY(0); }
+      50%{ transform: translateY(5px); }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .flecha-rebote{ animation: none; }
+    }
+  }
+
+  /* ============================================================
+     QUINTA MEJORA — máquina de escribir para la carta, cuenta
+     regresiva, galería de recuerdos y "razones por las que te
+     amo". Todo lo anterior permanece igual.
+     ============================================================ */
+
+  /* --- La carta aparece con un fundido suave (liviano, sin animar letra por letra) --- */
+  .mensaje-texto{
+    white-space: pre-line;
+    opacity: 0;
+    transition: opacity .9s ease;
+  }
+  .mensaje-texto.carta-visible{
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mensaje-texto{ transition: none; opacity: 1; }
+  }
+
+  /* --- Cuenta regresiva --- */
+  .cuenta-regresiva{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 4px 0 20px;
+  }
+  .cuenta-regresiva .unidad{
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    text-align: center;
+    box-shadow: 0 8px 18px -12px rgba(74,35,64,0.4);
+    min-width: 58px;
+  }
+  .cuenta-regresiva .numero{
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 26px;
+    color: var(--rose-deep);
+    line-height: 1;
+  }
+  .cuenta-regresiva .etiqueta{
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--plum-soft);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .cuenta-regresiva.cuenta-hoy .unidad{
+    background: linear-gradient(135deg, var(--rose-deep), var(--plum));
+  }
+  .cuenta-regresiva.cuenta-hoy .numero,
+  .cuenta-regresiva.cuenta-hoy .etiqueta{
+    color: #fff;
+  }
+
+  /* --- Sección de galería de recuerdos --- */
+  .seccion-galeria{
+    grid-column: 1 / -1;
+    margin-top: 3vh;
+    max-width: 100%;
+    overflow: hidden;
+    animation: apareceTarjeta 1s 0.4s ease-out both;
+  }
+  .galeria-titulo{
+    text-align: center;
+    margin: 0 0 6px;
+    padding: 0 16px;
+  }
+  .galeria-titulo .eyebrow{ display:block; }
+  .galeria-titulo h2{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    color: var(--plum);
+    font-size: clamp(28px, 4vw, 46px);
+    margin: 4px 0 22px;
+    line-height: 1.15;
+  }
+
+  /* --- Carrusel de fotos (una a la vez, deslizable con el dedo) --- */
+  .carrusel-envoltura{
+    position: relative;
+    max-width: 460px;
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+  .carrusel{
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 0;
+    border-radius: 10px;
+    /* Oculta la barra de scroll sin quitar el gesto de deslizar */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .carrusel::-webkit-scrollbar{ display: none; }
+  .carrusel-slide{
+    flex: 0 0 100%;
+    min-width: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+    cursor: pointer;
+  }
+  .carrusel-slide .marco-foto{
+    background: #fff;
+    padding: 10px 10px 16px;
+    border-radius: 8px;
+    box-shadow: 0 16px 30px -18px rgba(74,35,64,0.45);
+    width: 100%;
+    min-width: 0;
+    max-width: 340px;
+  }
+  .carrusel-slide .foto-cuadro{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--blush);
+  }
+  .carrusel-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .carrusel-slide figcaption{
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--plum-soft);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .carrusel-flecha{
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: #fff;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: var(--plum);
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px -10px rgba(74,35,64,0.5);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carrusel-flecha:focus-visible{
+    outline: 3px solid var(--rose-deep);
+    outline-offset: 2px;
+  }
+  .carrusel-flecha.anterior{ left: -6px; }
+  .carrusel-flecha.siguiente{ right: -6px; }
+  @media (min-width: 560px){
+    .carrusel-flecha.anterior{ left: -18px; }
+    .carrusel-flecha.siguiente{ right: -18px; }
+  }
+
+  .carrusel-puntos{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .carrusel-punto{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blush);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  .carrusel-punto.activo{
+    background: var(--rose-deep);
+    width: 22px;
+    border-radius: 5px;
+    transition: width .25s ease, background .25s ease;
+  }
+
+  /* --- Lightbox: foto agrandada al tocar/hacer clic --- */
+  .capa-lightbox{
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    background: rgba(43,14,26,0.82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 26px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+  }
+  .capa-lightbox.visible{
+    opacity: 1;
+    visibility: visible;
+  }
+  .caja-lightbox{
+    position: relative;
+    max-width: min(90vw, 560px);
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.85);
+    transition: transform .3s ease;
+  }
+  .capa-lightbox.visible .caja-lightbox{
+    transform: scale(1);
+  }
+  .caja-lightbox img{
+    max-width: 100%;
+    max-height: 74vh;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.6);
+    background: #fff;
+    padding: 8px;
+  }
+  .lightbox-caption{
+    font-family: 'Caveat', cursive;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    margin: 14px 0 0;
+    text-align: center;
+  }
+  .boton-cerrar-lightbox{
+    position: absolute;
+    top: -18px;
+    right: -18px;
+    border: none;
+    background: #fff;
+    color: var(--plum);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    box-shadow: 0 8px 18px -8px rgba(0,0,0,0.5);
+  }
+  .boton-cerrar-lightbox:focus-visible{
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+  @media (max-width: 680px){
+    .boton-cerrar-lightbox{ top: -14px; right: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .capa-lightbox, .caja-lightbox{ transition: none; }
+  }
+
+
+  .seccion-razones{
+    grid-column: 1 / -1;
+    margin-top: 4vh;
+    animation: apareceTarjeta 1s 0.5s ease-out both;
+  }
+  .razones-titulo{
+    text-align: center;
+    margin: 0 0 22px;
+  }
+  .razones-titulo .eyebrow{ display:block; }
+  .razones-titulo h2{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    color: var(--plum);
+    font-size: clamp(30px, 4vw, 46px);
+    margin: 4px 0 0;
+  }
+  .razones-lista{
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 760px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .razones-lista li{
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 10px 20px -14px rgba(74,35,64,0.35);
+  }
+  .razones-lista .icono-razon{
+    font-size: 20px;
+    flex: none;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .razones-lista .texto-razon{
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* --- Mensaje final grande antes del pie --- */
+  .mensaje-final{
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 5vh 0 2vh;
+  }
+  .mensaje-final .te-amo{
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(38px, 6vw, 72px);
+    color: var(--rose-deep);
+    margin: 0;
+    animation: latidoTeAmo 1.8s ease-in-out infinite;
+  }
+  @keyframes latidoTeAmo{
+    0%, 100%{ transform: scale(1); }
+    50%{ transform: scale(1.06); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .mensaje-final .te-amo{ animation: none; }
+    .seccion-galeria, .seccion-razones{ animation: none; }
+  }
+
+  @media (max-width: 680px){
+    .cuenta-regresiva .unidad{ min-width: 50px; padding: 7px 10px; }
+    .cuenta-regresiva .numero{ font-size: 21px; }
+  }
+</style>
+</head>
+<body class="regalo-cerrado">
+
+  <div class="portada" id="portada">
+    <div class="portada-fondo-gatitos" aria-hidden="true">
+
+      <!-- Carita de gatita genérica, estilo propio, sin marca registrada -->
+      <svg class="figura-gatita" style="top:8%; left:6%; width:70px; --giro:-8deg;" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="55" rx="34" ry="30" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <path d="M20 40 L28 14 L42 38 Z" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <path d="M80 40 L72 14 L58 38 Z" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <ellipse cx="38" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="62" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="50" cy="60" rx="3.2" ry="2.4" fill="#D9527A"/>
+        <line x1="8" y1="56" x2="32" y2="58" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="8" y1="64" x2="32" y2="63" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="68" y1="58" x2="92" y2="56" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="68" y1="63" x2="92" y2="64" stroke="#C15E7E" stroke-width="1.6"/>
+        <g transform="translate(70,26) rotate(18)">
+          <circle cx="-6" cy="0" r="7" fill="#F28FA6"/>
+          <circle cx="6" cy="0" r="7" fill="#F28FA6"/>
+          <circle cx="0" cy="0" r="4" fill="#D9527A"/>
+        </g>
+      </svg>
+
+      <svg class="figura-gatita" style="top:65%; left:4%; width:46px; --giro:10deg; animation-delay: -1.5s;" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="55" rx="34" ry="30" fill="#FFFFFF" stroke="#F0A8BF" stroke-width="2.5"/>
+        <path d="M20 40 L28 14 L42 38 Z" fill="#FFFFFF" stroke="#F0A8BF" stroke-width="2.5"/>
+        <path d="M80 40 L72 14 L58 38 Z" fill="#FFFFFF" stroke="#F0A8BF" stroke-width="2.5"/>
+        <ellipse cx="38" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="62" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="50" cy="60" rx="3.2" ry="2.4" fill="#D9527A"/>
+      </svg>
+
+      <svg class="figura-gatita" style="top:14%; right:7%; width:54px; --giro:6deg; animation-delay: -3s;" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="55" rx="34" ry="30" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <path d="M20 40 L28 14 L42 38 Z" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <path d="M80 40 L72 14 L58 38 Z" fill="#FFFFFF" stroke="#D9527A" stroke-width="2.5"/>
+        <ellipse cx="38" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="62" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="50" cy="60" rx="3.2" ry="2.4" fill="#D9527A"/>
+        <g transform="translate(30,26) rotate(-16)">
+          <circle cx="-6" cy="0" r="6" fill="#F0A8BF"/>
+          <circle cx="6" cy="0" r="6" fill="#F0A8BF"/>
+          <circle cx="0" cy="0" r="3.6" fill="#D9527A"/>
+        </g>
+      </svg>
+
+      <svg class="figura-gatita" style="bottom:10%; right:5%; width:64px; --giro:-5deg; animation-delay: -4.5s;" viewBox="0 0 100 100">
+        <ellipse cx="50" cy="55" rx="34" ry="30" fill="#FFFFFF" stroke="#F28FA6" stroke-width="2.5"/>
+        <path d="M20 40 L28 14 L42 38 Z" fill="#FFFFFF" stroke="#F28FA6" stroke-width="2.5"/>
+        <path d="M80 40 L72 14 L58 38 Z" fill="#FFFFFF" stroke="#F28FA6" stroke-width="2.5"/>
+        <ellipse cx="38" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="62" cy="52" rx="3.4" ry="4.2" fill="#8A2846"/>
+        <ellipse cx="50" cy="60" rx="3.2" ry="2.4" fill="#D9527A"/>
+        <line x1="8" y1="56" x2="32" y2="58" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="8" y1="64" x2="32" y2="63" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="68" y1="58" x2="92" y2="56" stroke="#C15E7E" stroke-width="1.6"/>
+        <line x1="68" y1="63" x2="92" y2="64" stroke="#C15E7E" stroke-width="1.6"/>
+      </svg>
+
+      <!-- Patitas de gatita repartidas por el fondo -->
+      <svg class="figura-gatita" style="top:38%; left:14%; width:30px; --giro:-20deg; animation-delay: -2s;" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="38" rx="16" ry="14" fill="#F0A8BF" opacity="0.6"/>
+        <circle cx="16" cy="18" r="6" fill="#F0A8BF" opacity="0.6"/>
+        <circle cx="30" cy="12" r="6" fill="#F0A8BF" opacity="0.6"/>
+        <circle cx="44" cy="18" r="6" fill="#F0A8BF" opacity="0.6"/>
+      </svg>
+      <svg class="figura-gatita" style="top:80%; left:30%; width:24px; --giro:15deg; animation-delay: -5s;" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="38" rx="16" ry="14" fill="#D9527A" opacity="0.35"/>
+        <circle cx="16" cy="18" r="6" fill="#D9527A" opacity="0.35"/>
+        <circle cx="30" cy="12" r="6" fill="#D9527A" opacity="0.35"/>
+        <circle cx="44" cy="18" r="6" fill="#D9527A" opacity="0.35"/>
+      </svg>
+      <svg class="figura-gatita" style="top:22%; left:38%; width:22px; --giro:-10deg; animation-delay: -0.8s;" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="38" rx="16" ry="14" fill="#F28FA6" opacity="0.45"/>
+        <circle cx="16" cy="18" r="6" fill="#F28FA6" opacity="0.45"/>
+        <circle cx="30" cy="12" r="6" fill="#F28FA6" opacity="0.45"/>
+        <circle cx="44" cy="18" r="6" fill="#F28FA6" opacity="0.45"/>
+      </svg>
+      <svg class="figura-gatita" style="bottom:16%; left:20%; width:26px; --giro:8deg; animation-delay: -3.6s;" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="38" rx="16" ry="14" fill="#F0A8BF" opacity="0.5"/>
+        <circle cx="16" cy="18" r="6" fill="#F0A8BF" opacity="0.5"/>
+        <circle cx="30" cy="12" r="6" fill="#F0A8BF" opacity="0.5"/>
+        <circle cx="44" cy="18" r="6" fill="#F0A8BF" opacity="0.5"/>
+      </svg>
+      <svg class="figura-gatita" style="top:55%; right:16%; width:20px; --giro:-14deg; animation-delay: -2.6s;" viewBox="0 0 60 60">
+        <ellipse cx="30" cy="38" rx="16" ry="14" fill="#D9527A" opacity="0.3"/>
+        <circle cx="16" cy="18" r="6" fill="#D9527A" opacity="0.3"/>
+        <circle cx="30" cy="12" r="6" fill="#D9527A" opacity="0.3"/>
+        <circle cx="44" cy="18" r="6" fill="#D9527A" opacity="0.3"/>
+      </svg>
+
+      <!-- Moñitos sueltos decorativos -->
+      <svg class="figura-gatita" style="top:48%; right:8%; width:34px; --giro:12deg; animation-delay: -1s;" viewBox="0 0 60 40">
+        <g transform="translate(30,20)">
+          <circle cx="-10" cy="0" r="10" fill="#F28FA6"/>
+          <circle cx="10" cy="0" r="10" fill="#F28FA6"/>
+          <circle cx="0" cy="0" r="6" fill="#D9527A"/>
+        </g>
+      </svg>
+      <svg class="figura-gatita" style="bottom:26%; left:9%; width:28px; --giro:-16deg; animation-delay: -4s;" viewBox="0 0 60 40">
+        <g transform="translate(30,20)">
+          <circle cx="-10" cy="0" r="10" fill="#F0A8BF"/>
+          <circle cx="10" cy="0" r="10" fill="#F0A8BF"/>
+          <circle cx="0" cy="0" r="6" fill="#D9527A"/>
+        </g>
+      </svg>
+
+    </div>
+    <div class="portada-caja">
+      <span class="portada-regalo" aria-hidden="true">🎁</span>
+      <span class="portada-eyebrow">Tienes una sorpresa</span>
+      <h2 class="portada-titulo">Un regalito para ti, Hellen</h2>
+      <p class="portada-sub">Princesita toca el botón para abrir tu tarjeta.</p>
+      <button type="button" id="boton-abrir-regalo" class="boton-abrir-regalo">Abrir mi regalo 💌</button>
+      <p class="portada-nota-audio">Actívale el sonido a tu teléfono 🔊</p>
+    </div>
+  </div>
+
+  <div class="capa-decorativa" aria-hidden="true">
+    <div class="marco"></div>
+
+    <div class="corazon c1"></div>
+    <div class="corazon c2"></div>
+    <div class="corazon c3"></div>
+    <div class="corazon c4"></div>
+    <div class="corazon c5"></div>
+    <div class="corazon c6"></div>
+
+    <div class="globo g1"></div>
+    <div class="globo g2"></div>
+    <div class="globo g3"></div>
+    <div class="globo g4"></div>
+  </div>
+
+  <main class="tarjeta">
+
+    <div class="columna-foto">
+      <div class="foto-envoltura">
+        <figure class="polaroid">
+          <div class="cinta"></div>
+          
+          
+          <img src="ojitos_de_miel.jpg.jpeg" alt="Foto de los dos juntos">
+          
+          <figcaption>Princesita</figcaption>
+        </figure>
+      </div>
+
+      <section>
+        <p class="stickers-titulo">Tus gustos y felicidades </p>
+        <div class="stickers">
+          
+          
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="🐱" data-titulo="Tus gatos" data-nota="Sé que amas a tus gatos casi tanto como yo a ti... casi." aria-label="Ver notita sobre gatos">
+            <div class="sticker">
+              <span class="emoji"></span>
+               <img src="gatin.png" alt="gatos"> 
+            </div>
+            <span class="sticker-etiqueta">gatos</span>
+          </div>
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="🦄" data-titulo="Unicornios" data-nota="Porque crees en la magia, y para mí, tú eres una." aria-label="Ver notita sobre unicornios">
+            <div class="sticker">
+              <span class="emoji"></span>
+               <img src="unicornio.png" alt="unicornios"> 
+            </div>
+            <span class="sticker-etiqueta">unicornios</span>
+          </div>
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="⚖️" data-titulo="Tu pasión: el Derecho" data-nota="Vas a ser una abogada increíble. Ya te veo defendiendo tus metas como defiendes tus ideas." aria-label="Ver notita sobre derecho">
+            <div class="sticker">
+              <span class="emoji"></span>
+               <img src="derecho.png" alt="derecho"> 
+            </div>
+            <span class="sticker-etiqueta">derecho</span>
+          </div>
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="🎨" data-titulo="El Arte" data-nota="Tienes una forma de ver el mundo que lo hace un poco más bonito." aria-label="Ver notita sobre arte">
+            <div class="sticker">
+              <span class="emoji"></span>
+               <img src="arte.png" alt="arte">
+            </div>
+            <span class="sticker-etiqueta">el Arte</span>
+          </div>
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="💗" data-titulo="El rosado" data-nota="Tu color favorito ya es parte de todos mis recuerdos contigo." aria-label="Ver notita sobre el rosado">
+            <div class="sticker">
+              <span class="emoji"></span>
+              <img src="rosa.jpeg" alt="el rosado"> 
+            </div>
+            <span class="sticker-etiqueta">el rosado</span>
+          </div>
+          <div class="sticker-item" tabindex="0" role="button" data-emoji="🎀" data-titulo="Hellen Kitty" data-nota="Tan tierna y tan tú. Feliz cumpleaños, princesa." aria-label="Ver notita sobre Hellen kitty">
+            <div class="sticker">
+              <span class="emoji"></span>
+               <img src="kitty.png" alt="kitty"> 
+            </div>
+            <span class="sticker-etiqueta">Hellen kitty</span>
+          </div>
+        </div>
+      </section>
+
+      <p class="nota-adhesiva">mi persona favorita 💕</p>
+    </div>
+    
+
+    
+    <div class="columna-texto">
+
+      
+      <header class="encabezado">
+        <span class="eyebrow">Un día especial para ti</span>
+        <h1 class="titulo">
+          Feliz cumpleaños
+          <span class="nombre">Hellen Herrera
+            <span class="pastel-vela" aria-hidden="true">
+              <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                <ellipse class="llama" cx="20" cy="7" rx="3" ry="5" fill="#F0A8BF"/>
+                <rect x="18.5" y="10" width="3" height="8" fill="#D9527A"/>
+                <rect x="8" y="22" width="24" height="12" rx="2" fill="#FBDDE6" stroke="#D9527A" stroke-width="1.5"/>
+                <rect x="8" y="18" width="24" height="6" rx="2" fill="#FFFFFF" stroke="#D9527A" stroke-width="1.5"/>
+              </svg>
+            </span>
+          </span>
+        </h1>
+      </header>
+
+      <div class="cuenta-regresiva" id="cuenta-regresiva" aria-live="polite">
+        <div class="unidad"><span class="numero" id="cuenta-dias">--</span><span class="etiqueta">días</span></div>
+        <div class="unidad"><span class="numero" id="cuenta-horas">--</span><span class="etiqueta">horas</span></div>
+        <div class="unidad"><span class="numero" id="cuenta-min">--</span><span class="etiqueta">min</span></div>
+      </div>
+
+      <section class="mensaje">
+        
+        <p class="mensaje-texto" id="texto-carta" data-carta="Feliz cumpleaños, Lleli, princesa de ojitos de miel.
+
+Espero que hoy sea un día tan bonito como tú y que la vida te siga regalando muchos motivos para sonreír. Nunca dejes de luchar por tus metas, porque sé que eres capaz de conseguir todo lo que te propongas.
+
+También quiero pedirte disculpas por las veces que te he hecho enojar, aunque creo que ya te toca seguir soportándome un ratito más jaja.
+
+Y sobre todo, quiero agradecerte. Llegaste en un momento de mi vida en el que más necesitaba una razón para volver a sonreír, y sin darte cuenta, me devolviste mucha de la felicidad que había perdido. Gracias por eso.
+
+Me alegra muchísimo tenerte en mi vida. Eres una persona increíble, de esas que hacen que los días sean un poco mejores con una simple sonrisa o una conversación. Espero seguir compartiendo muchos momentos contigo, acompañándote en cada paso y celebrando cada uno de tus logros.
+
+Disfruta mucho tu día, porque te lo mereces. Nunca olvides lo especial que eres para las personas que te queremos... y especialmente para mí."></p>
+
+        <p class="firma">— con todo mi  sincero cariño</p>
+        <p class="firma">— <span class="firma-nombre">Anderson Vallejo</span></p>
+      </section>
+
+    </div>
+
+    <!-- ============================================================
+         GALERÍA DE RECUERDOS — CARRUSEL
+         ------------------------------------------------------------
+         Se desliza una foto a la vez (como en Instagram). Para
+         cambiar una foto, reemplaza el "src" o el texto del
+         <figcaption>. Para agregar o quitar fotos, copia o borra
+         un bloque completo <div class="carrusel-slide">...</div>.
+         ============================================================ -->
+    <section class="seccion-galeria" aria-labelledby="titulo-galeria">
+      <div class="galeria-titulo">
+        <span class="eyebrow">Momentos que guardo de ti </span>
+        <h2 id="titulo-galeria">tus fotitos que siempre me llenaron de alegria</h2>
+      </div>
+
+      <div class="carrusel-envoltura">
+        <button type="button" class="carrusel-flecha anterior" id="carrusel-anterior" aria-label="Foto anterior">‹</button>
+        <button type="button" class="carrusel-flecha siguiente" id="carrusel-siguiente" aria-label="Foto siguiente">›</button>
+
+        <div class="carrusel" id="carrusel-fotos" role="region" aria-label="Carrusel de fotos" tabindex="0">
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: la cristiano ronaldo 7">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="cr7.jpeg" alt="Hellen con la camiseta de Portugal" loading="lazy">
+              </div>
+              <figcaption>la cristiano ronaldo"7"</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: mi pequeña diablita">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="diablita.jpeg" alt="Hellen en foto editada estilo trono" loading="lazy">
+              </div>
+              <figcaption>mi pequeña diablita</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: rompiéndola en el taekwondo">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="entrenamiento_.jpeg" alt="Hellen en su entrenamiento de taekwondo" loading="lazy">
+              </div>
+              <figcaption>rompiéndola en el taekwondo</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: tan ocurrente como siempre">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="lengua.jpeg" alt="Hellen sacando la lengua en el espejo" loading="lazy">
+              </div>
+              <figcaption>tan ocurrente como siempre</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: esa sonrisa que amo">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="lleliii.jpeg" alt="Hellen sonriendo" loading="lazy">
+              </div>
+              <figcaption>esa sonrisa que amo</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: mi ojitos de miel">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="miell.jpeg" alt="Hellen con playera de Hello Kitty" loading="lazy">
+              </div>
+              <figcaption>mi ojitos de miel</figcaption>
+            </figure>
+          </div>
+          <div class="carrusel-slide" tabindex="0" role="button" aria-label="Ver foto agrandada: las mas hermosa">
+            <figure class="marco-foto">
+              <div class="foto-cuadro">
+                <img src="vestido.jpeg" alt="Hellen con vestido elegante" loading="lazy">
+              </div>
+              <figcaption>las mas hermosa</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="carrusel-puntos" id="carrusel-puntos" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         RAZONES POR LAS QUE TE AMO
+         Agrega, quita o edita los <li> con tus propias razones.
+         ============================================================ -->
+    <section class="seccion-razones" aria-labelledby="titulo-razones">
+      <div class="razones-titulo">
+        <span class="eyebrow">Solo algunas de muchas</span>
+        <h2 id="titulo-razones">Razones por las que te amo</h2>
+      </div>
+      <ul class="razones-lista">
+        <li><span class="icono-razon" aria-hidden="true">💪</span><span class="texto-razon">Porque admiro tu fortaleza y dedicación. 
+          Nunca te rindes ante los obstáculos y siempre luchas por alcanzar todo aquello que te propones.</span></li>
+        <li><span class="icono-razon" aria-hidden="true">👑</span><span class="texto-razon">Porque tienes sueños enormes y un corazón aún más grande;
+           tu deseo de ayudar a los niños es una de las cosas que más me inspiran de ti.</span></li>
+        <li><span class="icono-razon" aria-hidden="true">👀</span><span class="texto-razon"> Porque tus ojos fueron lo primero que llamó mi atención, pero tu personalidad, tu inteligencia y 
+          hasta esa forma de enojarte por todo hicieron que me enamorara por completo.</span></li>
+        <li><span class="icono-razon" aria-hidden="true">👫🏻</span><span class="texto-razon">Porque extraño cada uno de tus audios, tus celos y tus berrinches;
+           son pequeños detalles que me recuerdan cuánto significas para mí.</span></li>
+        <li><span class="icono-razon" aria-hidden="true">🎮</span><span class="texto-razon">Porque contigo hasta los momentos más simples son especiales, como cuando jugamos 
+          juntos ese pequeño juego que programé pensando en ti.</span></li>
+        <li><span class="icono-razon" aria-hidden="true">💗</span><span class="texto-razon">Llegaste cuando mi mundo estaba oscuro y lo llenaste de luz. Eres única, inteligente, empática y el amor más bonito que me ha regalado la vida.
+           Te amo, princesa. </span></li>
+      </ul>
+    </section>
+
+    <section class="mensaje-final">
+      <p class="te-amo">Te amo, Hellen 💕</p>
+    </section>
+
+  </main>
+
+  <canvas id="lienzo-confeti" aria-hidden="true"></canvas>
+
+  <button id="boton-sorpresa" class="boton-sorpresa" type="button" aria-label="Lanzar confeti de sorpresa">
+    🎉 <span>Sorpresa</span>
+  </button>
+
+  <div class="reproductor">
+    <span class="etiqueta-musica" id="etiqueta-musica">Toca para escuchar "Las Mañanitas"</span>
+    <button id="boton-musica" class="boton-musica" type="button" aria-label="Reproducir música de cumpleaños" aria-pressed="false">
+      <span id="icono-musica">♪</span>
+    </button>
+  </div>
+
+  <!--
+    NOTA IMPORTANTE SOBRE LA MÚSICA:
+    Por derechos de autor no puedo incrustar el audio real de
+    "Las Mañanitas" interpretada por Alejandro Fernández dentro del código.
+    Para que suene, coloca tu propio archivo de audio (comprado o con
+    licencia válida) en la MISMA CARPETA que este archivo HTML, con
+    cualquiera de estos nombres:
+      - las-mananitas.mp3
+      - las-mananitas.ogg
+    El reproductor ya está conectado y listo: en cuanto el archivo
+    exista junto al HTML, el botón de la nota musical lo reproducirá
+    automáticamente al hacer clic.
+  -->
+  <audio id="musica-cumple" loop preload="none">
+    <source src="mañanitas.mp3" type="audio/mpeg">
+    <source src="las-mananitas.ogg" type="audio/ogg">
+  </audio>
+
+  <script>
+    (function(){
+      "use strict";
+
+      /* ---------- Reproductor de música ---------- */
+      var audio = document.getElementById('musica-cumple');
+      var botonMusica = document.getElementById('boton-musica');
+      var iconoMusica = document.getElementById('icono-musica');
+      var etiquetaMusica = document.getElementById('etiqueta-musica');
+      var sonando = false;
+
+      function actualizarBoton(){
+        if(sonando){
+          botonMusica.classList.add('girando');
+          botonMusica.setAttribute('aria-pressed', 'true');
+          botonMusica.setAttribute('aria-label', 'Pausar música de cumpleaños');
+          iconoMusica.textContent = '❚❚';
+          etiquetaMusica.textContent = 'Sonando: "Las Mañanitas" 🎶';
+        } else {
+          botonMusica.classList.remove('girando');
+          botonMusica.setAttribute('aria-pressed', 'false');
+          botonMusica.setAttribute('aria-label', 'Reproducir música de cumpleaños');
+          iconoMusica.textContent = '♪';
+          etiquetaMusica.textContent = 'Toca para escuchar "Las Mañanitas"';
+        }
+      }
+
+      botonMusica.addEventListener('click', function(){
+        if(!audio) return;
+        if(sonando){
+          audio.pause();
+          sonando = false;
+          actualizarBoton();
+        } else {
+          var promesa = audio.play();
+          if(promesa !== undefined){
+            promesa.then(function(){
+              sonando = true;
+              actualizarBoton();
+            }).catch(function(){
+              etiquetaMusica.textContent = 'Agrega "las-mananitas.mp3" junto al HTML para escucharla';
+            });
+          }
+        }
+      });
+
+      /* ---------- Confeti de sorpresa ---------- */
+      var canvas = document.getElementById('lienzo-confeti');
+      var ctx = canvas.getContext('2d');
+      var piezas = [];
+      var coloresConfeti = ['#D9527A', '#F28FA6', '#F0A8BF', '#8A2846', '#FBDDE6'];
+      var animando = false;
+
+      function ajustarLienzo(){
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener('resize', ajustarLienzo);
+      ajustarLienzo();
+
+      function crearConfeti(){
+        var total = 140;
+        piezas = [];
+        for(var i = 0; i < total; i++){
+          piezas.push({
+            x: Math.random() * canvas.width,
+            y: -20 - Math.random() * canvas.height * 0.5,
+            tam: 5 + Math.random() * 6,
+            velY: 2 + Math.random() * 3,
+            velX: (Math.random() - 0.5) * 2,
+            rot: Math.random() * 360,
+            velRot: (Math.random() - 0.5) * 10,
+            color: coloresConfeti[Math.floor(Math.random() * coloresConfeti.length)]
+          });
+        }
+      }
+
+      function dibujarConfeti(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        var activos = false;
+        for(var i = 0; i < piezas.length; i++){
+          var p = piezas[i];
+          if(p.y > canvas.height + 30) continue;
+          activos = true;
+          p.x += p.velX;
+          p.y += p.velY;
+          p.rot += p.velRot;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot * Math.PI / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.tam / 2, -p.tam / 2, p.tam, p.tam * 0.6);
+          ctx.restore();
+        }
+        if(activos){
+          requestAnimationFrame(dibujarConfeti);
+        } else {
+          animando = false;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      document.getElementById('boton-sorpresa').addEventListener('click', function(){
+        if(animando) return;
+        animando = true;
+        crearConfeti();
+        requestAnimationFrame(dibujarConfeti);
+      });
+
+      /* Lanza un pequeño confeti de bienvenida al cargar la tarjeta */
+      window.addEventListener('load', function(){
+        setTimeout(function(){
+          if(!animando){
+            animando = true;
+            crearConfeti();
+            requestAnimationFrame(dibujarConfeti);
+          }
+        }, 500);
+      });
+    })();
+  </script>
+
+  <div class="capa-nota-sticker" id="capa-nota-sticker" aria-hidden="true">
+    <div class="caja-nota-sticker" role="dialog" aria-modal="true" aria-labelledby="nota-sticker-titulo">
+      <button type="button" class="boton-cerrar-nota" id="boton-cerrar-nota" aria-label="Cerrar notita">✕</button>
+      <span class="emoji-grande" id="nota-sticker-emoji" aria-hidden="true">💗</span>
+      <p class="nota-titulo" id="nota-sticker-titulo">Título</p>
+      <p class="nota-texto" id="nota-sticker-texto">Texto</p>
+    </div>
+  </div>
+
+  <div class="capa-lightbox" id="capa-lightbox" aria-hidden="true">
+    <div class="caja-lightbox" role="dialog" aria-modal="true" aria-label="Foto agrandada">
+      <button type="button" class="boton-cerrar-lightbox" id="boton-cerrar-lightbox" aria-label="Cerrar foto">✕</button>
+      <img id="lightbox-imagen" src="" alt="">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <button type="button" id="boton-reiniciar" class="boton-reiniciar" aria-label="Repetir la animación de entrada y el confeti">
+    <span class="icono-reiniciar" aria-hidden="true">🔄</span> Repetir
+  </button>
+
+  <script>
+    (function(){
+      "use strict";
+
+      /* ============================================================
+         SCRIPT NUEVO — portada de regalo, notitas de stickers,
+         carta expandible y botón de reiniciar.
+         No se modifica ni se elimina el script original de arriba;
+         este bloque solo se agrega y reutiliza los botones ya
+         existentes (música y confeti) simulando clics sobre ellos.
+         ============================================================ */
+
+      /* ---------- Abrir el regalo (portada) ---------- */
+      var portada = document.getElementById('portada');
+      var botonAbrirRegalo = document.getElementById('boton-abrir-regalo');
+
+      if(botonAbrirRegalo){
+        botonAbrirRegalo.addEventListener('click', function(){
+          portada.classList.add('portada-oculta');
+          document.body.classList.remove('regalo-cerrado');
+
+          // Intenta reproducir la música reutilizando el botón ya existente
+          var botonMusica = document.getElementById('boton-musica');
+          if(botonMusica){
+            botonMusica.click();
+          }
+
+          // Lanza el confeti reutilizando el botón ya existente
+          var botonSorpresa = document.getElementById('boton-sorpresa');
+          if(botonSorpresa){
+            setTimeout(function(){ botonSorpresa.click(); }, 200);
+          }
+
+          // Permite que el foco pase al contenido principal
+          setTimeout(function(){
+            var titulo = document.querySelector('.titulo');
+            if(titulo){ titulo.setAttribute('tabindex', '-1'); titulo.focus({ preventScroll: true }); }
+          }, 400);
+        });
+      }
+
+      /* Si el usuario prefiere menos movimiento, igual dejamos que
+         abra el regalo con un toque; no forzamos el autoplay solo. */
+
+      /* ---------- Notitas de los stickers ---------- */
+      var capaNota = document.getElementById('capa-nota-sticker');
+      var notaEmoji = document.getElementById('nota-sticker-emoji');
+      var notaTitulo = document.getElementById('nota-sticker-titulo');
+      var notaTexto = document.getElementById('nota-sticker-texto');
+      var botonCerrarNota = document.getElementById('boton-cerrar-nota');
+      var stickerItems = document.querySelectorAll('.sticker-item');
+      var ultimoElementoActivo = null;
+
+      function abrirNotaSticker(item){
+        if(!capaNota) return;
+        ultimoElementoActivo = item;
+        notaEmoji.textContent = item.getAttribute('data-emoji') || '💗';
+        notaTitulo.textContent = item.getAttribute('data-titulo') || '';
+        notaTexto.textContent = item.getAttribute('data-nota') || '';
+        capaNota.classList.add('visible');
+        capaNota.setAttribute('aria-hidden', 'false');
+        botonCerrarNota.focus();
+      }
+
+      function cerrarNotaSticker(){
+        if(!capaNota) return;
+        capaNota.classList.remove('visible');
+        capaNota.setAttribute('aria-hidden', 'true');
+        if(ultimoElementoActivo){ ultimoElementoActivo.focus(); }
+      }
+
+      stickerItems.forEach(function(item){
+        item.addEventListener('click', function(){ abrirNotaSticker(item); });
+        item.addEventListener('keydown', function(evento){
+          if(evento.key === 'Enter' || evento.key === ' '){
+            evento.preventDefault();
+            abrirNotaSticker(item);
+          }
+        });
+      });
+
+      if(botonCerrarNota){
+        botonCerrarNota.addEventListener('click', cerrarNotaSticker);
+      }
+      if(capaNota){
+        capaNota.addEventListener('click', function(evento){
+          if(evento.target === capaNota){ cerrarNotaSticker(); }
+        });
+      }
+      document.addEventListener('keydown', function(evento){
+        if(evento.key === 'Escape'){
+          cerrarNotaSticker();
+        }
+      });
+
+      /* ---------- Lightbox: agrandar fotos del carrusel ---------- */
+      var capaLightbox = document.getElementById('capa-lightbox');
+      var lightboxImagen = document.getElementById('lightbox-imagen');
+      var lightboxCaption = document.getElementById('lightbox-caption');
+      var botonCerrarLightbox = document.getElementById('boton-cerrar-lightbox');
+      var fotosCarrusel = document.querySelectorAll('.carrusel-slide');
+      var ultimaFotoActiva = null;
+
+      function abrirLightbox(item){
+        if(!capaLightbox || !lightboxImagen) return;
+        var img = item.querySelector('img');
+        var texto = item.querySelector('figcaption');
+        if(!img) return;
+        ultimaFotoActiva = item;
+        lightboxImagen.src = img.getAttribute('src');
+        lightboxImagen.alt = img.getAttribute('alt') || '';
+        lightboxCaption.textContent = texto ? texto.textContent : '';
+        capaLightbox.classList.add('visible');
+        capaLightbox.setAttribute('aria-hidden', 'false');
+        botonCerrarLightbox.focus();
+      }
+
+      function cerrarLightbox(){
+        if(!capaLightbox) return;
+        capaLightbox.classList.remove('visible');
+        capaLightbox.setAttribute('aria-hidden', 'true');
+        if(ultimaFotoActiva){ ultimaFotoActiva.focus(); }
+      }
+
+      fotosCarrusel.forEach(function(item){
+        item.addEventListener('click', function(){ abrirLightbox(item); });
+        item.addEventListener('keydown', function(evento){
+          if(evento.key === 'Enter' || evento.key === ' '){
+            evento.preventDefault();
+            abrirLightbox(item);
+          }
+        });
+      });
+
+      if(botonCerrarLightbox){
+        botonCerrarLightbox.addEventListener('click', cerrarLightbox);
+      }
+      if(capaLightbox){
+        capaLightbox.addEventListener('click', function(evento){
+          if(evento.target === capaLightbox){ cerrarLightbox(); }
+        });
+      }
+      document.addEventListener('keydown', function(evento){
+        if(evento.key === 'Escape'){
+          cerrarLightbox();
+        }
+      });
+
+      /* ---------- Carrusel de fotos: flechas y puntitos ---------- */
+      var carrusel = document.getElementById('carrusel-fotos');
+      var slidesCarrusel = carrusel ? carrusel.querySelectorAll('.carrusel-slide') : [];
+      var botonAnterior = document.getElementById('carrusel-anterior');
+      var botonSiguiente = document.getElementById('carrusel-siguiente');
+      var contenedorPuntos = document.getElementById('carrusel-puntos');
+
+      if(carrusel && slidesCarrusel.length){
+        // Crea un puntito por cada foto
+        slidesCarrusel.forEach(function(slide, indice){
+          var punto = document.createElement('button');
+          punto.type = 'button';
+          punto.className = 'carrusel-punto';
+          punto.setAttribute('aria-label', 'Ir a la foto ' + (indice + 1));
+          if(indice === 0){ punto.classList.add('activo'); }
+          punto.addEventListener('click', function(){
+            slide.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+          });
+          contenedorPuntos.appendChild(punto);
+        });
+
+        var puntosCarrusel = contenedorPuntos.querySelectorAll('.carrusel-punto');
+
+        function indiceVisible(){
+          var centroCarrusel = carrusel.scrollLeft + (carrusel.clientWidth / 2);
+          var mejorIndice = 0;
+          var mejorDistancia = Infinity;
+          slidesCarrusel.forEach(function(slide, indice){
+            var centroSlide = slide.offsetLeft + (slide.clientWidth / 2);
+            var distancia = Math.abs(centroSlide - centroCarrusel);
+            if(distancia < mejorDistancia){
+              mejorDistancia = distancia;
+              mejorIndice = indice;
+            }
+          });
+          return mejorIndice;
+        }
+
+        function actualizarPuntos(){
+          var indiceActivo = indiceVisible();
+          puntosCarrusel.forEach(function(punto, indice){
+            punto.classList.toggle('activo', indice === indiceActivo);
+          });
+        }
+
+        var temporizadorScrollCarrusel = null;
+        carrusel.addEventListener('scroll', function(){
+          if(temporizadorScrollCarrusel){ clearTimeout(temporizadorScrollCarrusel); }
+          temporizadorScrollCarrusel = setTimeout(actualizarPuntos, 80);
+        }, { passive: true });
+
+        function irASlide(indiceObjetivo){
+          var indiceActual = indiceVisible();
+          var nuevoIndice = indiceActual + indiceObjetivo;
+          if(nuevoIndice < 0){ nuevoIndice = 0; }
+          if(nuevoIndice > slidesCarrusel.length - 1){ nuevoIndice = slidesCarrusel.length - 1; }
+          slidesCarrusel[nuevoIndice].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+
+        if(botonAnterior){
+          botonAnterior.addEventListener('click', function(){ irASlide(-1); });
+        }
+        if(botonSiguiente){
+          botonSiguiente.addEventListener('click', function(){ irASlide(1); });
+        }
+
+        carrusel.addEventListener('keydown', function(evento){
+          if(evento.key === 'ArrowRight'){ irASlide(1); }
+          if(evento.key === 'ArrowLeft'){ irASlide(-1); }
+        });
+      }
+
+      /* ---------- Carta: aparece con un fundido suave (sin animar letra por letra, para que no dé lag en el celular) ---------- */
+      var textoCarta = document.getElementById('texto-carta');
+
+      function mostrarCarta(){
+        if(!textoCarta) return;
+        var cartaCompleta = textoCarta.getAttribute('data-carta') || textoCarta.textContent.trim();
+        textoCarta.textContent = cartaCompleta;
+        textoCarta.classList.add('carta-visible');
+      }
+
+      // La carta aparece cuando se abre el regalo
+      if(botonAbrirRegalo){
+        botonAbrirRegalo.addEventListener('click', function(){
+          setTimeout(mostrarCarta, 400);
+        });
+      } else {
+        mostrarCarta();
+      }
+
+      /* ---------- Cuenta regresiva para el próximo cumpleaños ---------- */
+      /*
+        Cambia el mes y el día de aquí abajo por la fecha real de
+        cumpleaños (mes 1 = enero ... 12 = diciembre). Por ejemplo,
+        para el 15 de agosto sería: mesCumple = 8, diaCumple = 15.
+      */
+      var mesCumple = 7;
+      var diaCumple = 25;
+
+      var elDias = document.getElementById('cuenta-dias');
+      var elHoras = document.getElementById('cuenta-horas');
+      var elMin = document.getElementById('cuenta-min');
+      var cajaCuenta = document.getElementById('cuenta-regresiva');
+
+      function actualizarCuenta(){
+        if(!elDias || !elHoras || !elMin) return;
+        var ahora = new Date();
+        var anio = ahora.getFullYear();
+        var proximo = new Date(anio, mesCumple - 1, diaCumple, 0, 0, 0);
+        if(proximo < ahora){
+          proximo = new Date(anio + 1, mesCumple - 1, diaCumple, 0, 0, 0);
+        }
+        var diferencia = proximo - ahora;
+        var esHoy = ahora.getDate() === diaCumple && (ahora.getMonth() + 1) === mesCumple;
+
+        if(esHoy){
+          elDias.textContent = '🎂';
+          elHoras.textContent = '¡Feliz';
+          elMin.textContent = 'cumple!';
+          if(cajaCuenta){ cajaCuenta.classList.add('cuenta-hoy'); }
+          return;
+        }
+
+        var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        var horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
+        var minutos = Math.floor((diferencia / (1000 * 60)) % 60);
+
+        elDias.textContent = dias;
+        elHoras.textContent = horas;
+        elMin.textContent = minutos;
+      }
+
+      actualizarCuenta();
+      setInterval(actualizarCuenta, 30000);
+
+      /* ---------- Botón de reiniciar animación y confeti ---------- */
+      var botonReiniciar = document.getElementById('boton-reiniciar');
+      var elementosAnimados = document.querySelectorAll('.tarjeta, .columna-foto, .columna-texto, .sticker-item');
+
+      if(botonReiniciar){
+        botonReiniciar.addEventListener('click', function(){
+          botonReiniciar.classList.add('animando');
+          setTimeout(function(){ botonReiniciar.classList.remove('animando'); }, 450);
+
+          elementosAnimados.forEach(function(elemento){
+            elemento.style.animation = 'none';
+            // Forzar reflujo para poder reiniciar la animación
+            void elemento.offsetWidth;
+            elemento.style.animation = '';
+          });
+
+          var botonSorpresa = document.getElementById('boton-sorpresa');
+          if(botonSorpresa){ botonSorpresa.click(); }
+        });
+      }
+    })();
+  </script>
+
+  <div class="pista-scroll" id="pista-scroll">
+    Desliza para ver tu mensaje <span class="flecha-rebote" aria-hidden="true">↓</span>
+  </div>
+
+  <script>
+    (function(){
+      "use strict";
+
+      /* ============================================================
+         SCRIPT NUEVO — pista de scroll "hay más abajo" en celular.
+         Reutiliza el botón "Abrir mi regalo" ya existente para
+         saber cuándo mostrar la pista, y se oculta sola cuando el
+         usuario empieza a bajar la página.
+         ============================================================ */
+      var pista = document.getElementById('pista-scroll');
+      var botonAbrirRegalo = document.getElementById('boton-abrir-regalo');
+      var pistaMostrada = false;
+      var temporizadorPista = null;
+
+      function mostrarPista(){
+        if(!pista || pistaMostrada) return;
+        pistaMostrada = true;
+        pista.classList.add('pista-visible');
+
+        // Se oculta sola después de unos segundos, por si no hay scroll
+        temporizadorPista = setTimeout(ocultarPista, 6000);
+      }
+
+      function ocultarPista(){
+        if(!pista) return;
+        pista.classList.remove('pista-visible');
+        pista.classList.add('pista-oculta');
+        if(temporizadorPista){ clearTimeout(temporizadorPista); temporizadorPista = null; }
+      }
+
+      if(botonAbrirRegalo){
+        botonAbrirRegalo.addEventListener('click', function(){
+          setTimeout(mostrarPista, 900);
+        });
+      }
+
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 40){
+          ocultarPista();
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
